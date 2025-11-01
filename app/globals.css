@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { 
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #f8fff9, #eaffec);
+  color: #1e293b; /* soft dark text */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card styling */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #b9e5c4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  border-color: #4ade80;
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+
+/* Inputs */
+.input {
+  @apply rounded-xl px-3 py-2 w-full transition-all;
+  background: #f0fdf4;
+  border: 1px solid #b9e5c4;
+  color: #1e293b;
+}
+.input:focus {
+  outline: none;
+  border-color: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.3);
+}
+
+/* Buttons */
+.btn {
+  @apply rounded-2xl px-4 py-2 text-sm font-medium transition-colors;
+}
+
+.btn-primary {
+  background: #4ade80;
+  color: white;
+  border: 1px solid #4ade80;
+}
+.btn-primary:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.btn-ghost {
+  background: white;
+  border: 1px solid #b9e5c4;
+  color: #1e293b;
+}
+.btn-ghost:hover {
+  background: #f0fdf4;
+  border-color: #4ade80;
+}
+
+/* Code blocks (if any) */
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  background: #f0fdf4;
+  color: #166534;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* ensure enough left padding when an icon sits inside the input */
+.with-left-icon { padding-left: 2.75rem !important; }
+
+/* perfectly center the left icon */
+.icon-left {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* date inputs can ignore normal padding on some browsers — force it */
+input[type="date"].with-left-icon { padding-left: 2.75rem !important; }
+
+/* give extra room to the native right-side caret on selects */
+.with-right-caret { padding-right: 2.25rem; }
